@@ -4,6 +4,38 @@ A framework for tracking a portfolio of in-flight projects across multiple repos
 
 The thesis: **visibility beats discipline**. Once your portfolio grows past what willpower can sustain, you don't need a better todo system — you need the state of the world rendered for you at the moment you sit down to work. PULSE is that rendering.
 
+## Visible Dashboard
+
+```
+PROJECT PULSE — Active Portfolio
+================================
+
+proj-alpha
+----------
+  Pri  Project                           Status        Health    Done  Last Touch
+  ---  --------------------------------  ------------  -------   ----  ----------
+  p1   billing-webhook-rewrite           BLOCKED       🔴          30%  2026-05-18
+  p1   search-api-v2                     active        🟢          55%  2026-05-23
+  p2   ci-pipeline-hardening             done          ✅         100%  2026-05-12
+  p3   legacy-cleanup                    STALE(44 d)   🟡          15%  2026-04-10
+
+proj-beta
+---------
+  Pri  Project                           Status        Health    Done  Last Touch
+  ---  --------------------------------  ------------  -------   ----  ----------
+  p0   realtime-pipeline                 active        🟢          85%  2026-05-22
+  p3   vector-search-spike               archived      ⬛          40%  2026-04-21
+  p3   schema-migration-tool             idea          ⚪           0%  2026-05-21
+
+Portfolio: 7 rows across 2 project(s)  |  🟡 yellow: 1  |  🔴 red: 1
+
+FINISHER: 'realtime-pipeline' is at 85%, ~1 session from done.
+          Project: proj-beta
+          Close it before opening new work?
+
+FOCUS LOCKS: no active focus declared in any project
+```
+
 ## Architecture
 
 Two layers, with a registry binding them:
