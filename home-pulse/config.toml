@@ -1,0 +1,12 @@
+# Pulse global config
+#
+# Read by the hooks via lib.sh. Per-invocation env vars
+# (STALE_THRESHOLD_DAYS, FINISHER_THRESHOLD_PCT) take precedence over
+# these values; values here take precedence over built-in defaults.
+
+# Days without a `last_touched` bump before a PULSE goes yellow (stale).
+stale_threshold_days = 21
+
+# Completion percentage at which the dashboard surfaces a "FINISHER" prompt
+# nominating the closest-to-done PULSE for closeout before opening new work.
+finisher_threshold_pct = 80

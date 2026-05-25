@@ -1,0 +1,18 @@
+# Focus-lock state — per-operator, never shared
+.focus-lock
+.focus-lock-bypass
+
+# Backups created by hooks (the .bak convention)
+*.bak
+*.bak-*
+*.removed-*
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Editor noise
+.vscode/
+.idea/
+*.swp
+*~

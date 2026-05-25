@@ -1,0 +1,33 @@
+{
+  "_comment": "Merge the 'hooks' and 'permissions' blocks into .claude/settings.json (team-shared, checked into git) or ~/.claude/settings.json (personal). Restart Claude Code after merging.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/.pulse/hooks/session-start-dashboard.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit|str_replace|create_file",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash $HOME/.pulse/hooks/focus-lock.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(bash $HOME/.pulse/hooks/session-start-dashboard.sh)",
+      "Bash(bash $HOME/.pulse/hooks/focus-lock.sh)",
+      "Bash(bash $HOME/.pulse/hooks/pulse-bump.sh:*)"
+    ]
+  }
+}
